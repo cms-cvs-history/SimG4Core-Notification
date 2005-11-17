@@ -36,7 +36,7 @@ namespace {
    template<class T> struct MyObserver : public Observer<const T*> {
       mutable bool saw_;
       MyObserver() : saw_(false) {}     
-      void update(const T*) const{
+      void update(const T*) {
          saw_=true;
       }
    };
@@ -69,7 +69,7 @@ namespace {
    template<class T> struct Counting : public Observer<const T*> {
       mutable int& count_;
       Counting(int& iCount) : count_(iCount) {}     
-      void update(const T*) const{
+      void update(const T*) {
          ++count_;
       }
    };
