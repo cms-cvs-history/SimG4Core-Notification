@@ -54,6 +54,7 @@ testSimActivityRegistry::signalTest()
    SimActivityRegistry registry;
 
    TEST(beginOfRun,BeginOfRun);
+   TEST(beginOfJob,BeginOfJob);
    TEST(beginOfEvent,BeginOfEvent);
    TEST(beginOfTrack,BeginOfTrack);
    TEST(dddWorld,DDDWorld);
