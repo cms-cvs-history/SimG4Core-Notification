@@ -86,6 +86,13 @@ namespace {
 
 }
 
+#define TESTREG(signal, SIGNAL)    int count ## SIGNAL = 0; \
+Counting<SIGNAL> watch ## SIGNAL (count ## SIGNAL ); \
+enroller.enroll(registry, &watch ## SIGNAL);\
+const SIGNAL* p ## SIGNAL=0; \
+registry. signal ## Signal_(p ## SIGNAL); \
+CPPUNIT_ASSERT(1==watch ## SIGNAL .count_);
+
 void
 testSimActivityRegistry::enrollerTest()
 {
@@ -111,4 +118,16 @@ testSimActivityRegistry::enrollerTest()
    
    CPPUNIT_ASSERT(1==int1Signal);
    CPPUNIT_ASSERT(2==int2Signals);
+
+   TESTREG(beginOfRun,BeginOfRun);
+   TESTREG(beginOfJob,BeginOfJob);
+   TESTREG(beginOfEvent,BeginOfEvent);
+   TESTREG(beginOfTrack,BeginOfTrack);
+   TESTREG(dddWorld,DDDWorld);
+   TESTREG(g4Step,G4Step);
+   
+   TESTREG(endOfRun,EndOfRun);
+   TESTREG(endOfEvent,EndOfEvent);
+   TESTREG(endOfTrack,EndOfTrack);   
+   
 }
