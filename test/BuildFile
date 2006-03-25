@@ -2,7 +2,7 @@
 <use name=cppunit>
 <use name=SimG4Core/Notification>
 
-<bin name=testSimG4CoreNotifications file=testRunner.cc,simactivityregistry_t.cppunit.cc>
+<bin name=testSimG4CoreNotifications file=simactivityregistry_t.cppunit.cpp>
   <use name=boost> 
 </bin>
 

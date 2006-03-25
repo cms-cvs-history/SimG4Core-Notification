@@ -131,3 +131,4 @@ testSimActivityRegistry::enrollerTest()
    TESTREG(endOfTrack,EndOfTrack);   
    
 }
+#include <Utilities/Testing/interface/CppUnit_testdriver.icpp>
